@@ -12,8 +12,10 @@ export default function App () {
   useEffect(() => {
     axios.get(`${baseURL}/projects`)
       .then(res => {
-        setPersonalProjects(res.data.projects.filter(project => !project.contributor))
-        setContributorProjects(res.data.projects.filter(project => project.contributor))
+        if (res.data.projects) {
+          setPersonalProjects(res.data.projects ?res.data.projects.filter(project => !project.contributor))
+          setContributorProjects(res.data.projects.filter(project => project.contributor))
+        }
       })
       .catch(err => {
         console.error(err)
