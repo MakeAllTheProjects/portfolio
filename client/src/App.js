@@ -13,7 +13,7 @@ export default function App () {
     axios.get(`${baseURL}/projects`)
       .then(res => {
         if (res.data.projects) {
-          setPersonalProjects(res.data.projects ?res.data.projects.filter(project => !project.contributor))
+          setPersonalProjects(res.data.projects.filter(project => !project.contributor))
           setContributorProjects(res.data.projects.filter(project => project.contributor))
         }
       })
