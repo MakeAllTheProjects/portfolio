@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import './App.scss'
 
-export const baseURL = process.env.REACT_APP_IS_PRODUCTION ? 'https://bracelet-designer.herokuapp.com/api' : 'http://localhost:8080/api'
+export const baseURL = process.env.REACT_APP_IS_PRODUCTION ? 'https://meghan-bomberger-portfolio.herokuapp.com/api' : 'http://localhost:8080/api'
 
 export default function App () {
   const [message, setMessage] = useState("")
