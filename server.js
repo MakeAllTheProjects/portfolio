@@ -11,7 +11,8 @@ const server = express()
 
 const whitelist = [
 	'localhost:3000',
-	'localhost:8080'
+	'localhost:8080',
+	'meghan-bomberger-portfolio.herokuapp.com'
 ]
 
 const corsOptions = {
