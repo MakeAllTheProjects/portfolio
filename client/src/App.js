@@ -8,6 +8,7 @@ export default function App () {
   const [message, setMessage] = useState("")
   const [personalProjects, setPersonalProjects] = useState([])
   const [contributorProjects, setContributorProjects] = useState([])
+  const [skills, setSkills] = useState([])
 
   useEffect(() => {
     axios.get(`${baseURL}/projects`)
@@ -21,10 +22,14 @@ export default function App () {
         console.error(err)
         setMessage("ERROR")
       })
+    
+    axios.get(`${baseURL}/skills`)
+      .then(res => {
+        if (res.data.skills) {
+          setSkills(res.data.skills)
+        }
+      })
   }, [])
-
-  useEffect(() => {
-  }, [personalProjects, contributorProjects])
 
   return (
     <div className="app">
@@ -40,6 +45,11 @@ export default function App () {
       {contributorProjects.length > 0 && <h2>Contributor Projects</h2>}
       <ul>
         {contributorProjects.map(project => <li key={project.id}>{project.project_name}</li>)}
+      </ul>
+
+      {skills.length > 0 && <h2>Skills</h2>}
+      <ul>
+        {skills.map(skill => <li key={skill.id}>{skill.skill}</li>)}
       </ul>
     </div>
   )

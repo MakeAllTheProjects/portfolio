@@ -6,6 +6,7 @@ const path = require('path')
 const serveStatic = require('serve-static')
 
 const projectsRouter = require('./routes/ProjectsRouter')
+const skillsRouter = require('./routes/SkillsRouter')
 
 const server = express()
 
@@ -37,6 +38,7 @@ server.get("/api", (req, res) => {
 })
 
 server.use('/api/projects', projectsRouter)
+server.use('/api/skills', skillsRouter)
 
 server.use((err, req, res, next) => {
 	if (err) {
