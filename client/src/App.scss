@@ -25,16 +25,26 @@
   @include center-v;
 }
 
+a {
+  outline: none;
+}
+
 section {
   min-height: 100vh;
-  width: 90%;
+  width: 100%;
   
   h2 {
     position: sticky;
-    top: 10rem;
+    top: 3rem;
+		z-index: 3;
+    margin-bottom: 5rem;
+		width: 100%;
+    @include dark-fade-bar;
     @include font-two;
     font-size: 4rem;
     text-transform: uppercase;
+    text-align: center;
+    line-height: 250%;
   }
 }
 

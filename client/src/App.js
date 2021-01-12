@@ -8,9 +8,6 @@ import Skills from './components/skills/Skills'
 
 export const baseURL = process.env.REACT_APP_IS_PRODUCTION ? 'https://meghan-bomberger-portfolio.herokuapp.com/api' : 'http://localhost:8080/api'
 
-export const ProjectsContext = React.createContext()
-export const SkillsContext = React.createContext()
-
 export default function App () {
   const [message, setMessage] = useState("")
   const [personalProjects, setPersonalProjects] = useState([])
@@ -44,12 +41,9 @@ export default function App () {
       <div className="app">
         <Hero/>
         <Nav/>
-        <ProjectsContext.Provider value={{personalProjects, contributorProjects}}>
-          <Projects/>
-        </ProjectsContext.Provider>
-        <SkillsContext.Provider value={{skills}}>
-          <Skills/>
-        </SkillsContext.Provider>
+        {personalProjects.length > 0 && <Projects projects={personalProjects}/>}
+        {contributorProjects.length > 0 && <Projects projects={contributorProjects}/>}
+        {skills.length > 0 && <Skills skills={skills}/>}
       </div>
     </>
   )

@@ -1,14 +1,12 @@
-import React, { useContext } from 'react'
-import { ProjectsContext } from '../../App'
+import React from 'react'
 import './Projects.scss'
+import ProjectCard from './ProjectCard'
 
-export default function Projects () {
-	const projects = useContext(ProjectsContext)
-	const { personalProjects, contributorProjects } = projects
-	
+export default function Projects ({projects}) {	
 	return (
 		<section className="section projects">
-			<h2>Projects</h2>
+			<h2>{projects[0].contributor ? "Contributor" : "Personal"} Projects</h2>
+			{projects.map(project => <ProjectCard key={project.id} project={project}/>)}
 		</section>
 	)
 }

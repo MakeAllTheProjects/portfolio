@@ -1,10 +1,7 @@
-import React, { useContext } from 'react'
-import { SkillsContext } from '../../App'
+import React from 'react'
 import './Skills.scss'
 
-export default function Skills () {
-	const skills = useContext(SkillsContext)
-
+export default function Skills ({skills}) {
 	return (
 		<section className="section skills">
 			<h2>Skills</h2>

@@ -1,0 +1,97 @@
+@import '../../variables.scss';
+
+.project-card {
+	position: sticky;
+	top: 15rem;
+	@include center-h;
+	align-items: flex-start;
+	margin: 10vh 0 10vh 0;
+
+	a {
+		.project-examples {
+			@include center-h;
+
+			.desktop-example {
+				@include center-v;
+				position: relative;
+				margin: 2vh 0 12vh 0;
+				height: calc(27vw);
+				width: 45vw;
+				border-radius: calc(1vw);
+				background-color: black;
+
+				.desktop-screen {
+					height: calc(23vw);
+					width: 43vw;
+					border-radius: calc(0.5vw);
+					background-size: cover;
+					background-repeat: no-repeat;
+					background-position: top center;
+				}
+
+				.desktop-screen-stand {
+					position: absolute;
+					bottom: -7%;
+					height: calc(2vw);
+					width: 5vw;
+					background-color: black;
+				}
+
+				.desktop-screen-base {
+					position: absolute;
+					bottom: -10%;
+					height: calc(1.5vw);
+					width: 10vw;
+					border-radius: 50%;
+					background-color: black;
+				}
+			}
+
+			.mobile-example {
+				z-index: 2;
+				display: grid;
+				align-items: center;
+				justify-content: center;
+				grid-template-rows: calc(2vw) auto calc(3vw);
+				margin: calc(7.5vw) 0 0 -8vw;
+				height: calc(21vw);
+				width: 10vw;
+				border-radius: calc(1vw);
+				background-color: black;
+				box-shadow: inset rgba(255, 255, 255, 0.4) 1px 1px 3px;
+				transform: rotate(10deg);
+
+				.phone-camera {
+					grid-row: 1;
+					display: flex;
+					align-self: center;
+					justify-self: center;
+					height: calc(1vw);
+					width: 1vw;
+					border-radius: 50%;
+					background-color: $darkest-gray;
+				}
+
+				.phone-screen {
+					grid-row: 2;
+					height: calc(16vw);
+					width: 9vw;
+					background-size: cover;
+					background-position: center;
+					background-repeat: no-repeat;
+				}
+
+				.phone-button {
+					grid-row: 3;
+					display: flex;
+					align-self: center;
+					justify-self: center;
+					height: calc(2vw);
+					width: 2vw;
+					border-radius: 50%;
+					background-color: $dark-gray;
+				}
+			}
+		}
+	}
+}
