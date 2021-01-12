@@ -10,10 +10,19 @@ projectsRouter.get('/', async (req, res, next) => {
 			view: "Grid view"
 		}).eachPage(function page(records, fetchNextPage) {
 			const projects = records.map(record => {
+				const skills = record.fields.skill_ids.map((skill, i) => {
+					return {
+						skill_id: skill,
+						skill_name: record.fields.skill_names[i],
+						skill_category: record.fields.skill_categories[i],
+						skill_icon: record.fields.skill_icons[i].thumbnails.full.url
+					}
+				})
+
 				return {
 					id: record.id,
 					project_name: record.fields.project_name,
-					skills: record.fields.skills,
+					skills: skills,
 					desktop_img: record.fields.desktop_img[0].thumbnails.full.url,
 					mobile_img: record.fields.mobile_img[0].thumbnails.full.url,
 					description: record.fields.description,
