@@ -1,0 +1,28 @@
+@import '../variables.scss';
+
+.hero {
+	@include center-v;
+	height: 100vh;
+	z-index: 2;
+
+	h1 {
+		font-size: 10vw;
+		font-weight: 600;
+		@include font-two;
+		text-transform: uppercase;
+		text-align: left;
+
+		span {
+			font-size: 10vw;
+			font-weight: 900;
+			@include font-two;
+		}
+	}
+
+	h2 {
+		font-size: 6.7vw;
+		font-weight: 100;
+		@include font-two;
+		text-align: left;
+	}
+}

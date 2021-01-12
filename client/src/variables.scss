@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+@mixin font-one {
+	font-family: 'Roboto', sans-serif;
+}
+
+@mixin font-two {
+	font-family: 'Roboto Mono', monospace;
+}
+
+$light-text: rgba(255, 255, 255, 0.75);
+
+@mixin center-h {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin center-v {
+	@include center-h;
+	flex-direction: column;
+}

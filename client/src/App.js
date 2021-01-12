@@ -1,8 +1,14 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import './App.scss'
+import Hero from './components/Hero'
+import Projects from './components/projects/Projects'
+import Skills from './components/skills/Skills'
 
 export const baseURL = process.env.REACT_APP_IS_PRODUCTION ? 'https://meghan-bomberger-portfolio.herokuapp.com/api' : 'http://localhost:8080/api'
+
+export const ProjectsContext = React.createContext()
+export const SkillsContext = React.createContext()
 
 export default function App () {
   const [message, setMessage] = useState("")
@@ -32,25 +38,17 @@ export default function App () {
   }, [])
 
   return (
-    <div className="app">
-      <h1>Welcome to your portfolio</h1>
-      
-      {message && <p style={{backgroundColor: "red"}}>{message}</p>}
-      
-      {personalProjects.length > 0 && <h2>Personal Projects</h2>}
-      <ul>
-        {personalProjects.map(project => <li key={project.id}>{project.project_name}</li>)}
-      </ul>
-      
-      {contributorProjects.length > 0 && <h2>Contributor Projects</h2>}
-      <ul>
-        {contributorProjects.map(project => <li key={project.id}>{project.project_name}</li>)}
-      </ul>
-
-      {skills.length > 0 && <h2>Skills</h2>}
-      <ul>
-        {skills.map(skill => <li key={skill.id}>{skill.skill}</li>)}
-      </ul>
-    </div>
+    <>
+      <div className="app-background"/>
+      <div className="app">
+        <Hero/>
+        {/* <ProjectsContext.Provider value={{personalProjects, contributorProjects}}>
+          <Projects/>
+        </ProjectsContext.Provider> */}
+        {/* <SkillsContext.Provider value={{skills}}>
+          <Skills/>
+        </SkillsContext.Provider> */}
+      </div>
+    </>
   )
 }
