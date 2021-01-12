@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import './App.scss'
 import Hero from './components/Hero'
+import Nav from './components/Nav'
 import Projects from './components/projects/Projects'
 import Skills from './components/skills/Skills'
 
@@ -42,12 +43,13 @@ export default function App () {
       <div className="app-background"/>
       <div className="app">
         <Hero/>
-        {/* <ProjectsContext.Provider value={{personalProjects, contributorProjects}}>
+        <Nav/>
+        <ProjectsContext.Provider value={{personalProjects, contributorProjects}}>
           <Projects/>
-        </ProjectsContext.Provider> */}
-        {/* <SkillsContext.Provider value={{skills}}>
+        </ProjectsContext.Provider>
+        <SkillsContext.Provider value={{skills}}>
           <Skills/>
-        </SkillsContext.Provider> */}
+        </SkillsContext.Provider>
       </div>
     </>
   )

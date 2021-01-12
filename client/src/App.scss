@@ -22,6 +22,20 @@
 }
 
 .app {
+  @include center-v;
+}
+
+section {
+  min-height: 100vh;
+  width: 90%;
+  
+  h2 {
+    position: sticky;
+    top: 10rem;
+    @include font-two;
+    font-size: 4rem;
+    text-transform: uppercase;
+  }
 }
 
 
