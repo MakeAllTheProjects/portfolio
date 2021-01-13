@@ -1,7 +1,9 @@
 import React from 'react'
 import './ProjectCard.scss'
+import githubIcon from '../../assets/github.svg'
 
 export default function ProjectCard ({project}) {
+	console.log(project)
 	return (
 		<article className="project-card">
 			<a href={project.url}>
@@ -21,7 +23,30 @@ export default function ProjectCard ({project}) {
 				</div>
 			</a>
 			<div className="project-info">
-				<h3>{project.title}</h3>
+				<a href={project.url}>
+					<h3>{project.project_name}</h3>
+				</a>
+				<p className="project-description">{project.description}</p>
+				<div className="skills-used">
+					{project.skills.map(skill => (
+						<img
+							key={skill.skill_id}
+							className="project-skill"
+							src={skill.skill_icon}
+							alt={skill.skill_name}
+							title={skill.skill_name}
+						/>
+					))}
+				</div>
+				<p className="project-repo">Checkout out the repo</p>
+				<a href={project.repo}>
+					<img
+						alt="github-repo"
+						className="git-hub-icon"
+						src={githubIcon}
+						title="GitHub repo"
+					/>
+				</a>
 			</div>
 
 		</article>

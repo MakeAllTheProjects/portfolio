@@ -1,24 +1,30 @@
 @import '../../variables.scss';
 
 .project-card {
-	position: sticky;
-	top: 15rem;
 	@include center-h;
-	align-items: flex-start;
-	margin: 10vh 0 10vh 0;
+	@include small-media {
+		@include center-v;
+	}
 
 	a {
 		.project-examples {
 			@include center-h;
+			margin-bottom: 4vh;
+			filter: drop-shadow(rgba(200, 255, 255, 0.2) 0.1rem 0.1rem 1rem);
 
 			.desktop-example {
 				@include center-v;
 				position: relative;
-				margin: 2vh 0 12vh 0;
+				margin: 2vh 0 0 0;
 				height: calc(27vw);
 				width: 45vw;
 				border-radius: calc(1vw);
 				background-color: black;
+
+				@include small-media {
+					height: calc(42vw);
+					width: 65vw;
+				}
 
 				.desktop-screen {
 					height: calc(23vw);
@@ -27,6 +33,11 @@
 					background-size: cover;
 					background-repeat: no-repeat;
 					background-position: top center;
+
+					@include small-media {
+						height: calc(38vw);
+						width: 62.1vw;
+					}
 				}
 
 				.desktop-screen-stand {
@@ -35,6 +46,12 @@
 					height: calc(2vw);
 					width: 5vw;
 					background-color: black;
+
+					@include small-media {
+						height: calc(2.89vw);
+						width: 7.22vw;
+						bottom: -7%;
+					}
 				}
 
 				.desktop-screen-base {
@@ -44,6 +61,11 @@
 					width: 10vw;
 					border-radius: 50%;
 					background-color: black;
+
+					@include small-media {
+						height: calc(2.167vw);
+						width: 14.44vw;
+					}
 				}
 			}
 
@@ -53,13 +75,19 @@
 				align-items: center;
 				justify-content: center;
 				grid-template-rows: calc(2vw) auto calc(3vw);
-				margin: calc(7.5vw) 0 0 -8vw;
+				margin: calc(17.5vw) 0 0 -8vw;
 				height: calc(21vw);
 				width: 10vw;
 				border-radius: calc(1vw);
 				background-color: black;
 				box-shadow: inset rgba(255, 255, 255, 0.4) 1px 1px 3px;
 				transform: rotate(10deg);
+
+				@include small-media {
+					height: calc(30.33vw);
+					width: 14.44vw;
+					margin: calc(25vw) 0 0 -8vw;
+				}
 
 				.phone-camera {
 					grid-row: 1;
@@ -70,6 +98,11 @@
 					width: 1vw;
 					border-radius: 50%;
 					background-color: $darkest-gray;
+
+					@include small-media {
+						height: calc(1.44vw);
+						width: 1.44vw;
+					}
 				}
 
 				.phone-screen {
@@ -79,6 +112,11 @@
 					background-size: cover;
 					background-position: center;
 					background-repeat: no-repeat;
+
+					@include small-media {
+						height: calc(23.11vw);
+						width: 13vw;
+					}
 				}
 
 				.phone-button {
@@ -90,6 +128,60 @@
 					width: 2vw;
 					border-radius: 50%;
 					background-color: $dark-gray;
+
+					@include small-media {
+						height: calc(2.89vw);
+						width: 2.89vw;
+					}
+				}
+			}
+		}
+	}
+
+	.project-info {
+		a > h3 {
+			margin: 0 7.5% 2rem 7.5%;
+			width: 85%;
+			@include font-two;
+			font-size: 2.5rem;
+			text-align: center;
+			text-transform: uppercase;
+			text-shadow: $darkest-gray 1px 1px 3px;
+		}
+
+		.project-description {
+			margin: 3rem 10% 5rem 10%;
+			width: 80%;
+			font-size: 2rem;
+			text-align: justify;
+		}
+
+		.skills-used {
+			@include center-h;
+			margin-top: 3rem;
+
+			.project-skill {
+				margin: 0 1rem 0 1rem;
+				height: 3rem;
+			}
+		}
+
+		.project-repo {
+			margin-top: 4rem;
+			font-size: 2rem;
+			text-align: center;
+		}
+
+		a { 
+			
+			width: 100%;
+
+			.git-hub-icon {
+				margin: 2rem calc(50% - 2rem) 5rem calc(50% - 2rem);
+				height: 4rem;
+
+				&:last-child {
+					margin: 2rem calc(50% - 2rem) 0 calc(50% - 2rem);
 				}
 			}
 		}
