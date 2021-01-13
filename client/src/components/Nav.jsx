@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from '@reach/router'
 import './Nav.scss'
 import homeIcon from '../assets/005-house.svg'
 import projectsIcon from '../assets/008-web-programming.svg'

@@ -2,20 +2,36 @@
 
 .project-card {
 	@include center-h;
+	justify-content: space-between;
+	margin-top: 4rem;
+	width: 80%;
+
 	@include small-media {
 		@include center-v;
+		width: 90%;
+	}
+
+	@include large-media {
+		display: grid;
+		grid-template-columns: 55% 35%;
+		margin-bottom: 5vh;
 	}
 
 	a {
+		width: 100%;
+		@include large-media {
+			grid-column: 1;
+		}
+
 		.project-examples {
 			@include center-h;
-			margin-bottom: 4vh;
+			margin: 0 0 4vh 0;
 			filter: drop-shadow(rgba(200, 255, 255, 0.2) 0.1rem 0.1rem 1rem);
 
 			.desktop-example {
 				@include center-v;
 				position: relative;
-				margin: 2vh 0 0 0;
+				margin: 0 0 0 0;
 				height: calc(27vw);
 				width: 45vw;
 				border-radius: calc(1vw);
@@ -27,8 +43,8 @@
 				}
 
 				.desktop-screen {
-					height: calc(23vw);
-					width: 43vw;
+					height: calc(25vw);
+					width: 40vw;
 					border-radius: calc(0.5vw);
 					background-size: cover;
 					background-repeat: no-repeat;
@@ -108,10 +124,11 @@
 				.phone-screen {
 					grid-row: 2;
 					height: calc(16vw);
-					width: 9vw;
+					width: 8.5vw;
 					background-size: cover;
 					background-position: center;
 					background-repeat: no-repeat;
+					border-radius: 0.25rem;
 
 					@include small-media {
 						height: calc(23.11vw);
@@ -139,6 +156,11 @@
 	}
 
 	.project-info {
+		
+		@include large-media {
+			grid-column: 2;
+		}
+
 		a > h3 {
 			margin: 0 7.5% 2rem 7.5%;
 			width: 85%;
@@ -153,15 +175,17 @@
 			margin: 3rem 10% 5rem 10%;
 			width: 80%;
 			font-size: 2rem;
-			text-align: justify;
+			text-align: center;
+			line-height: 150%;
 		}
 
 		.skills-used {
 			@include center-h;
-			margin-top: 3rem;
+			flex-wrap: wrap;
+			margin: 1rem 1rem 0 1rem;
 
 			.project-skill {
-				margin: 0 1rem 0 1rem;
+				margin: 1rem;
 				height: 3rem;
 			}
 		}

@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import './App.scss'
+import Footer from './components/Footer'
 import Hero from './components/Hero'
 import Nav from './components/Nav'
 import Projects from './components/projects/Projects'
@@ -33,6 +34,10 @@ export default function App () {
           setSkills(res.data.skills)
         }
       })
+      .catch(err => {
+        console.error(err)
+        setMessage("ERROR")
+      })
   }, [])
 
   return (
@@ -44,6 +49,7 @@ export default function App () {
         {personalProjects.length > 0 && <Projects projects={personalProjects}/>}
         {contributorProjects.length > 0 && <Projects projects={contributorProjects}/>}
         {skills.length > 0 && <Skills skills={skills}/>}
+        <Footer/>
       </div>
     </>
   )

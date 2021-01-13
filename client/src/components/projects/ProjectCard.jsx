@@ -3,7 +3,6 @@ import './ProjectCard.scss'
 import githubIcon from '../../assets/github.svg'
 
 export default function ProjectCard ({project}) {
-	console.log(project)
 	return (
 		<article className="project-card">
 			<a href={project.url}>

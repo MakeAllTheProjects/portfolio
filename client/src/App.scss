@@ -32,7 +32,7 @@ a {
 
 section {
   // min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   
   h2 {
     position: sticky;
@@ -46,6 +46,10 @@ section {
     text-transform: uppercase;
     text-align: center;
     line-height: 250%;
+
+    @include small-media {
+      font-size: 7.5vw;
+    }
   }
 }
 
