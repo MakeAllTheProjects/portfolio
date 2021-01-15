@@ -46,6 +46,7 @@ export default function Nav () {
 		<nav className="nav">
 			{navLinks.map(navLink => (
 				<Link
+					key={navLink.title}
 					to={navLink.path}
 					className="nav-link"
 					smooth={true}
