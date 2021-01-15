@@ -1,27 +1,21 @@
 @import '../../variables.scss';
 
 .project-card {
-	@include center-h;
+	@include center-v;
 	justify-content: space-between;
 	margin-top: 4rem;
 	width: 80%;
 
 	@media screen and (max-width: 1000px) {
-		@include center-v;
 		width: 90%;
 	}
 
 	@include large-media {
-		display: grid;
-		grid-template-columns: 55% 35%;
 		margin-bottom: 5vh;
 	}
 
 	a {
 		width: 100%;
-		@include large-media {
-			grid-column: 1;
-		}
 
 		.project-examples {
 			@include center-h;
@@ -156,11 +150,6 @@
 	}
 
 	.project-info {
-		
-		@include large-media {
-			grid-column: 2;
-		}
-
 		a > h3 {
 			margin: 0 7.5% 2rem 7.5%;
 			width: 85%;
