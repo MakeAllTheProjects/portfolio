@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-scroll'
 import './Nav.scss'
 import homeIcon from '../assets/005-house.svg'
 import projectsIcon from '../assets/008-web-programming.svg'
@@ -7,54 +8,54 @@ import contactIcon from '../assets/003-call.svg'
 import aboutIcon from '../assets/004-user.svg'
 import resumeIcon from '../assets/009-pdf.svg'
 
-const navLinks = [
-	{
-		title: "top",
-		icon: homeIcon,
-		path: "#home"
-	},
-	{
-		title: "projects",
-		icon: projectsIcon,
-		path: "#projects"
-	},
-	{
-		title: "skills",
-		icon: skillsIcon,
-		path: "#skills"
-	},
-	{
-		title: "contact me",
-		icon: contactIcon,
-		path: "#contact"
-	},
-	{
-		title: "about me",
-		icon: aboutIcon,
-		path: "#about"
-	},
-	{
-		title: "download my resume",
-		icon: resumeIcon,
-		path: "#resume"
-	}
-]
-
 export default function Nav () {
+	const navLinks = [
+		{
+			title: "top",
+			icon: homeIcon,
+			path: "hero"
+		},
+		{
+			title: "about me",
+			icon: aboutIcon,
+			path: "about"
+		},
+		{
+			title: "projects",
+			icon: projectsIcon,
+			path: "personalProjects"
+		},
+		{
+			title: "skills",
+			icon: skillsIcon,
+			path: "skills"
+		},
+		{
+			title: "contact me",
+			icon: contactIcon,
+			path: "contact"
+		},
+		{
+			title: "download my resume",
+			icon: resumeIcon,
+			path: "#resume"
+		}
+	]
+
 	return (
 		<nav className="nav">
 			{navLinks.map(navLink => (
-				<a
+				<Link
+					to={navLink.path}
 					className="nav-link"
-					key={navLink.path}	
-					href={`#${navLink.path}`}
+					smooth={true}
 				>
 					<img
 						alt={navLink.title}
 						title={navLink.title}
 						src={navLink.icon}
 					/>
-				</a>
+				</Link>
 			))}
 		</nav>
 	)

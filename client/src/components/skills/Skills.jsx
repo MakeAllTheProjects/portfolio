@@ -3,7 +3,6 @@ import './Skills.scss'
 import SkillsList from './SkillsList'
 
 export default function Skills ({skills}) {
-	console.log(skills[0])
 	return (
 		<section className="section skills">
 			<h2>Skills</h2>

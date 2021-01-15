@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { Element } from 'react-scroll'
 import './App.scss'
 import Footer from './components/Footer'
 import Hero from './components/Hero'
@@ -44,12 +45,33 @@ export default function App () {
     <>
       <div className="app-background"/>
       <div className="app">
-        <Hero/>
+        <Element name="hero" className="element">
+          <Hero/>
+        </Element>
+        
         <Nav/>
-        {personalProjects.length > 0 && <Projects projects={personalProjects}/>}
-        {contributorProjects.length > 0 && <Projects projects={contributorProjects}/>}
-        {skills.length > 0 && <Skills skills={skills}/>}
-        <Footer/>
+        
+        {personalProjects.length > 0 && (
+          <Element name="personalProjects" className="element">
+            <Projects projects={personalProjects}/>
+          </Element>
+        )}
+
+        {contributorProjects.length > 0 && (
+          <Element name="contributorProjects" className="element">
+            <Projects projects={contributorProjects}/>
+          </Element>
+        )}
+
+        {skills.length > 0 && (
+          <Element name="skills" className="element">
+            <Skills skills={skills}/>
+          </Element>
+        )}
+
+        <Element name="contact" className="element">
+          <Footer/>
+        </Element>
       </div>
     </>
   )

@@ -23,6 +23,10 @@
 
 .app {
   @include center-v;
+
+  .element {
+    width: 100%;
+  }
 }
 
 a {
