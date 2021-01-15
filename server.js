@@ -5,6 +5,7 @@ const express = require('express')
 const path = require('path')
 const serveStatic = require('serve-static')
 
+const messageRouter = require('./routes/MessageRouter')
 const projectsRouter = require('./routes/ProjectsRouter')
 const skillsRouter = require('./routes/SkillsRouter')
 
@@ -13,7 +14,8 @@ const server = express()
 const whitelist = [
 	'localhost:3000',
 	'localhost:8080',
-	'meghan-bomberger-portfolio.herokuapp.com'
+	'meghan-bomberger-portfolio.herokuapp.com',
+	process.env.AIRTABLE_API_ENDPOINT
 ]
 
 const corsOptions = {
@@ -37,6 +39,7 @@ server.get("/api", (req, res) => {
 	res.send({ message: "Hello World!" })
 })
 
+server.use('/api/messages', messageRouter)
 server.use('/api/projects', projectsRouter)
 server.use('/api/skills', skillsRouter)
 

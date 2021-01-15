@@ -43,6 +43,7 @@ export default function Footer () {
 	const [phone, setPhone] = useState("")
 	const [message, setMessage] = useState("")
 	const [confirmation, setConfirmation] = useState(false)
+	const [fade, setFade] = useState(0)
 	const [error, setError] = useState("")
 
 	const handleSubmit = (e) => {
@@ -54,12 +55,36 @@ export default function Footer () {
 			phone,
 			message
 		})
-			.then(res => setConfirmation(res.success))
+			.then(() => {
+				setConfirmation(true)
+				setFade(100)
+				setName("")
+				setEmail("")
+				setPhone("")
+				setMessage("")
+				setTimeout(() => {
+					setFade(75)
+					setTimeout(() => {
+						setFade(50)
+						setTimeout(() => {
+							setFade(25)
+							setTimeout(() => {
+								setFade(0)
+								setConfirmation(false)
+							}, 500)
+						}, 500)
+					}, 500)
+				}, 4000)
+			})
 			.catch(err => {
 				console.error(err)
 				setError("Ut oh! An error has occured...")
 				setConfirmation(false)
 			})
+	}
+
+	const fadeOut = {
+		filter: `opacity(${confirmation ? 50 : 100}%)`
 	}
 
 	return (
@@ -102,35 +127,41 @@ export default function Footer () {
 					value={name}
 					onChange={e => setName(e.target.value)}
 					required
+					style={fadeOut}
 				/>
 				<input
 					type="email"
 					placeholder="email"
 					value={email}
 					onChange={e => setEmail(e.target.value)}
+					style={fadeOut}
 				/>
 				<input
 					type="tel"
 					placeholder="phone"
 					value={phone}
 					onChange={e => setPhone(e.target.value)}
+					style={fadeOut}
 				/>
 				<textarea
 					placeholder="Message"
 					value={message}
 					onChange={e => setMessage(e.target.value)}
 					required
+					style={fadeOut}
 				/>
 				<input
 					type="submit"
 					value="Send Message"
 					disabled={confirmation}
 					className="submit"
+					style={fadeOut}
 				/>
 				<div
 					className="confirmation"
 					style={{
-						visibility: confirmation ? "visible" : "hidden"
+						visibility: confirmation ? "visible" : "hidden",
+						filter: `opacity(${fade}%)`
 					}}
 				>
 					<img

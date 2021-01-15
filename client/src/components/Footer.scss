@@ -76,6 +76,7 @@ footer {
 			padding: 0 1.5rem 0 1.5rem;
 			outline: none;
 			color: black;
+			transition: all 1s ease;
 
 			@include small-media {
 				width: 90%;
@@ -88,11 +89,13 @@ footer {
 			outline: none;
 			color: white;
 			margin-top: 3rem;
+			transition: all 1s ease;
 		}
 
 		.confirmation {
 			@include center-h;
 			margin-top: 2rem;
+			transition: all 1s ease;
 
 			img {
 				margin-right: -1rem;
