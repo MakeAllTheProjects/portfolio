@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Element } from 'react-scroll'
 import './App.scss'
+import About from './components/about/About'
 import Footer from './components/Footer'
 import Hero from './components/Hero'
 import Nav from './components/Nav'
@@ -50,6 +51,10 @@ export default function App () {
         </Element>
         
         <Nav/>
+
+        <Element name="about" className="element">
+          <About />
+        </Element>
         
         {personalProjects.length > 0 && (
           <Element name="personalProjects" className="element">

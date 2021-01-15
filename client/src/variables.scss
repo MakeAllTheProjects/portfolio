@@ -29,6 +29,10 @@ $tablet: 775px;
 	@media screen and (min-width: $phone) and (max-width: $tablet) { @content };
 }
 
+@mixin tablet-and-smaller {
+	@media screen and (max-width: $tablet) { @content };
+}
+
 @mixin center-h {
 	display: flex;
 	justify-content: center;

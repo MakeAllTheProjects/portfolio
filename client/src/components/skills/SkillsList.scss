@@ -10,6 +10,10 @@
 		@include font-two;
 		font-size: 3rem;
 		text-transform: uppercase;
+
+		@media screen and (max-width: 565px) {
+			font-size: 5vw;
+		}
 	}
 
 	.icons-container {
