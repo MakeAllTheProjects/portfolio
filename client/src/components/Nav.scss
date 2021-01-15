@@ -18,6 +18,15 @@
 	.nav-link {
 		filter: invert(100%);
 		outline: none;
+		cursor: pointer;
+
+		&:hover {
+			filter: invert(100%);
+
+			img {
+				filter: drop-shadow(black 0 0 3px);
+			}
+		}
 
 		img {
 			height: 3rem;
