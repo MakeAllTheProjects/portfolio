@@ -9,7 +9,7 @@ footer {
 	background-color: black;
 	box-shadow: rgba(0, 0, 0, 0.5) 0.1rem 0.5rem 3rem;
 
-	@include small-media {
+	@include tablet-and-smaller {
 		@include center-v;
 	}
 
@@ -63,7 +63,7 @@ footer {
 		@include center-v;
 		grid-column: 2;
 
-		@include small-media {
+		@include tablet-and-smaller {
 			margin-top: 5rem;
 		}
 
@@ -78,7 +78,7 @@ footer {
 			color: black;
 			transition: all 1s ease;
 
-			@include small-media {
+			@include tablet-and-smaller {
 				width: 90%;
 			}
 		}
