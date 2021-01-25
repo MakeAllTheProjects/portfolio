@@ -19,6 +19,7 @@
 		filter: invert(100%);
 		outline: none;
 		cursor: pointer;
+		@include center-h;
 
 		&:hover {
 			filter: invert(100%);

@@ -1,9 +1,8 @@
 @import '../../variables.scss';
 
 .project-card {
-	@include center-v;
+	@include center-h;
 	justify-content: space-between;
-	margin-top: 4rem;
 	width: 80%;
 
 	@media screen and (max-width: 1000px) {
@@ -12,6 +11,17 @@
 
 	@include large-media {
 		margin-bottom: 5vh;
+	}
+
+	@include small-media {
+		flex-direction: column;
+		margin-top: 4rem;
+		padding-bottom: 4rem;
+		border-bottom: $faded-light-text solid 0.15rem;
+
+		&:last-child {
+			border-bottom: none;
+		}
 	}
 
 	a {
@@ -150,6 +160,7 @@
 	}
 
 	.project-info {
+		margin-left: 5vw;
 		a > h3 {
 			margin: 0 7.5% 2rem 7.5%;
 			width: 85%;
