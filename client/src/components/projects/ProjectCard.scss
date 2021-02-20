@@ -2,19 +2,21 @@
 
 .project-card {
 	@include center-h;
+  flex-direction: column;
 	justify-content: space-between;
+  align-items: flex-start;
 	width: 80%;
 
 	@media screen and (max-width: 1000px) {
 		width: 90%;
 	}
 
-	@include large-media {
+	@include desktop-only {
 		margin-bottom: 5vh;
+    flex-direction: row;
 	}
 
-	@include small-media {
-		flex-direction: column;
+	@include tablet-and-smaller {
 		margin-top: 4rem;
 		padding-bottom: 4rem;
 		border-bottom: $faded-light-text solid 0.15rem;
@@ -25,12 +27,19 @@
 	}
 
 	a {
-		width: 100%;
+		height: 100%;
+    width: 100%;
 
 		.project-examples {
+      height: 100%;
+      width: 100%;
 			@include center-h;
 			margin: 0 0 4vh 0;
 			filter: drop-shadow(rgba(200, 255, 255, 0.2) 0.1rem 0.1rem 1rem);
+
+      @include desktop-only {
+        width: 50vw;
+      }
 
 			.desktop-example {
 				@include center-v;
@@ -41,7 +50,7 @@
 				border-radius: calc(1vw);
 				background-color: black;
 
-				@include small-media {
+				@include tablet-and-smaller {
 					height: calc(42vw);
 					width: 65vw;
 				}
@@ -54,7 +63,7 @@
 					background-repeat: no-repeat;
 					background-position: top center;
 
-					@include small-media {
+					@include tablet-and-smaller {
 						height: calc(38vw);
 						width: 62.1vw;
 					}
@@ -67,7 +76,7 @@
 					width: 5vw;
 					background-color: black;
 
-					@include small-media {
+					@include tablet-and-smaller{
 						height: calc(2.89vw);
 						width: 7.22vw;
 						bottom: -7%;
@@ -82,7 +91,7 @@
 					border-radius: 50%;
 					background-color: black;
 
-					@include small-media {
+					@include tablet-and-smaller {
 						height: calc(2.167vw);
 						width: 14.44vw;
 					}
@@ -103,7 +112,7 @@
 				box-shadow: inset rgba(255, 255, 255, 0.4) 1px 1px 3px;
 				transform: rotate(10deg);
 
-				@include small-media {
+				@include tablet-and-smaller {
 					height: calc(30.33vw);
 					width: 14.44vw;
 					margin: calc(25vw) 0 0 -8vw;
@@ -119,7 +128,7 @@
 					border-radius: 50%;
 					background-color: $darkest-gray;
 
-					@include small-media {
+					@include tablet-and-smaller {
 						height: calc(1.44vw);
 						width: 1.44vw;
 					}
@@ -134,7 +143,7 @@
 					background-repeat: no-repeat;
 					border-radius: 0.25rem;
 
-					@include small-media {
+					@include tablet-and-smaller {
 						height: calc(23.11vw);
 						width: 13vw;
 					}
@@ -150,9 +159,10 @@
 					border-radius: 50%;
 					background-color: $dark-gray;
 
-					@include small-media {
-						height: calc(2.89vw);
-						width: 2.89vw;
+					@include tablet-and-smaller {
+						height: calc(2.5vw);
+						width: 2.5vw;
+            margin-bottom: calc(0.75vw);
 					}
 				}
 			}
@@ -160,7 +170,13 @@
 	}
 
 	.project-info {
-		margin-left: 5vw;
+    width: 100%;
+
+    @include desktop-only {
+      width: 50vw;
+      padding-top: 10vh;
+    }
+
 		a > h3 {
 			margin: 0 7.5% 2rem 7.5%;
 			width: 85%;
@@ -169,6 +185,11 @@
 			text-align: center;
 			text-transform: uppercase;
 			text-shadow: $darkest-gray 1px 1px 3px;
+
+      @include desktop-only {
+        text-align: center;
+        font-size: 2.75rem;
+      }
 		}
 
 		.project-description {
@@ -197,7 +218,6 @@
 		}
 
 		a { 
-			
 			width: 100%;
 
 			.git-hub-icon {
