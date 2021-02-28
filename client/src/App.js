@@ -42,6 +42,17 @@ export default function App () {
       })
   }, [])
 
+  // ping sleeping projects
+  useEffect(() => {
+    if (personalProjects.length > 0) {
+      personalProjects.forEach(project => {
+        if (project.url) {
+          axios.get(`${project.url}/hello`)
+        }
+      })
+    }
+  }, [personalProjects])
+
   return (
     <>
       <div className="app-background"/>
