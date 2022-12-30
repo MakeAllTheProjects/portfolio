@@ -16,8 +16,12 @@
   },
   "scripts": {
     "dev": "nodemon server.js",
-    "build": "cd client && npm build",
-    "heroku-postbuild": "cd client && npm install && yarn build --prod",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "cd client && npm install && npm run build --prod",
     "start": "node server.js"
+  },
+  "engines": {
+    "npm": "8.3.1",
+    "node": "16.14.0"
   }
 }
