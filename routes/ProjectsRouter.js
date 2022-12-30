@@ -36,6 +36,7 @@ projectsRouter.get('/', async (req, res, next) => {
         success: true,
         projects: projects
       })
+      next()
     }, function done(err) {
       if (err) {
         console.error(err)

@@ -16,8 +16,8 @@
   },
   "scripts": {
     "dev": "nodemon server.js",
-    "build": "cd client && yarn build",
-    "heroku-postbuild": "cd client && yarn install && yarn build --prod",
+    "build": "cd client && npm build",
+    "heroku-postbuild": "cd client && npm install && yarn build --prod",
     "start": "node server.js"
   }
 }
