@@ -16,6 +16,7 @@ const whitelist = [
 	'localhost:8080',
 	'meghan-bomberger-portfolio.herokuapp.com',
 	'meghanbomberger.dev',
+	'www.meghanbomberger.dev',
 	process.env.AIRTABLE_API_ENDPOINT
 ]
 
