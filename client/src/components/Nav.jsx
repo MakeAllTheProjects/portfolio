@@ -66,7 +66,7 @@ export default function Nav () {
 				<a 
 					className="nav-link"
 					download 
-					href="https://docs.google.com/document/d/1LvxSpdYRNxnQ371F71kZPvaru0e5EyC6E82U6tJDhQg/export?format=pdf"
+					href="https://docs.google.com/document/d/1yMB0ptyZBqqyDCP1OMg9mfHepngaG8aWgFOOVO5RJyo/export?format=pdf"
 					onClick={downloadResumeAnimation}
 				>
 					<img
